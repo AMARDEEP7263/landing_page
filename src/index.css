@@ -26,10 +26,13 @@ nav ul li a {
   color: white;
   text-decoration: none;
   font-weight: bold;
+  transition: color 0.3s;
+  /* Add transition for smooth color change */
 }
 
 nav ul li a:hover {
-  text-decoration: underline;
+  color: #61dafb;
+  /* Change this color to your desired hover color */
 }
 
 .container {
@@ -37,7 +40,7 @@ nav ul li a:hover {
 }
 
 h1 {
-  color: wheat;
+  color: peachpuff;
 }
 
 form {
@@ -73,3 +76,7 @@ button {
 button:hover {
   background-color: #61dafb;
 }
+
+.error {
+  color: red;
+  font-size: 0.875rem;
