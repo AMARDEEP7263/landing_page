@@ -1,8 +1,8 @@
+/* Styles for the home container */
 .home-container {
-    background-image: url('/background.jpeg');
-    /* Path to your background image */
-    background-size: cover;
-    background-position: center;
+    position: relative;
+    overflow: hidden;
+    width: 100%;
     height: 100vh;
     /* Full viewport height */
     display: flex;
@@ -10,11 +10,97 @@
     align-items: center;
     color: white;
     text-align: center;
+    background: #000;
+    perspective: 1px;
+    /* Perspective for 3D effect */
+    overflow-x: hidden;
+    /* Hide horizontal overflow */
 }
 
+/* Styles for the stars animation */
+.stars {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    transform: translateZ(0);
+}
+
+/* Keyframes for the star animation */
+@keyframes animStars {
+    from {
+        transform: translateY(0);
+    }
+
+    to {
+        transform: translateY(-100vh);
+    }
+}
+
+/* Styles for the stars */
+.stars:before {
+    content: " ";
+    position: absolute;
+    top: -2000px;
+    width: 2px;
+    height: 2px;
+    background: white;
+    box-shadow:
+        1000px 2000px white,
+        1200px 1800px white,
+        1500px 2500px white,
+        900px 1900px white,
+        1400px 2100px white,
+        1300px 2700px white,
+        1600px 1700px white,
+        1100px 2300px white,
+        1700px 1600px white,
+        1800px 2400px white;
+    animation: animStars 60s linear infinite;
+    /* Adjusted animation duration */
+}
+
+/* Styles for the home content */
 .home-content {
-    background: rgba(0, 0, 0, 0.5);
-    /* Add a slight background to make text readable */
-    padding: 2rem;
-    border-radius: 10px;
+    position: relative;
+    z-index: 1;
+    /* Ensure content is above the stars animation */
+    text-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    /* Text shadow for readability */
+}
+
+/* Navigation styles */
+.navbar {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    z-index: 2;
+    /* Ensure above stars */
+}
+
+.navbar ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.navbar li {
+    display: inline-block;
+    margin-left: 20px;
+}
+
+.navbar a {
+    text-decoration: none;
+    color: white;
+    font-size: 1.2rem;
+    padding: 10px 15px;
+    transition: color 0.3s ease, text-shadow 0.3s ease;
+}
+
+.navbar a:hover {
+    color: #00c3ff;
+    /* Change color on hover */
+    text-shadow: 0 0 10px #00c3ff;
+    /* Add glow effect on hover */
 }

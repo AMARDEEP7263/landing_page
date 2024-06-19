@@ -23,11 +23,8 @@ nav ul li {
 }
 
 nav ul li a {
-  color: white;
-  text-decoration: none;
-  font-weight: bold;
-  transition: color 0.3s;
-  /* Add transition for smooth color change */
+  color: inherit;
+  text-decoration: inherit;
 }
 
 nav ul li a:hover {
