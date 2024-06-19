@@ -1,8 +1,11 @@
+import "./Home.css"; // Import the CSS file
+
 const Home = () => {
   return (
-    <div>
-      <h1>Welcome to Our Landing Page</h1>
-      <p>This is the home page of our awesome site.</p>
+    <div className="home-container">
+      <div className="home-content">
+        <h1>Welcome to Our Landing Page</h1>
+      </div>
     </div>
   );
 };
